@@ -1,7 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+
 
 h1 {
     color: #4286f4;
@@ -9,14 +6,19 @@ h1 {
     margin-bottom: 60px;
 }
 
-div {
+.body .div {
     text-align: center;
     width: 80%;
     margin: 0 auto;
 }
 
+table{
+    text-align: center; 
+    margin: 0 auto;
+}
+
+
 input {
-    width: 100%;
     margin: 10px;
     padding: 18px 10px;
     border-radius: 4px;
@@ -29,10 +31,13 @@ button {
     padding: 12px 10px;
     width: 30%;
     border-radius: 4px;
-    background-color: #4286f4;
+    background-color: #0262b3;
     color: #ffffff;
     cursor: pointer;
     font-size: 18px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
 }
 .header-wrapper {
     max-width: 1440px;

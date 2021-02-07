@@ -1,30 +1,580 @@
-.App {
-  text-align: left;
+@font-face {
+	font-family: Bogle;
+	src: url(https://www.lider.cl/fonts/Bogle-Black.woff2) format("woff2"), url(https://www.lider.cl/fonts/Bogle-Black.woff) format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+	font-family: Bogle;
+	src: url(https://www.lider.cl/fonts/Bogle-Bold.woff2) format("woff2"), url(https://www.lider.cl/fonts/Bogle-Bold.woff) format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+	font-family: Bogle;
+	src: url(https://www.lider.cl/fonts/Bogle-Regular.woff2) format("woff2"), url(https://www.lider.cl/fonts/Bogle-Regular.woff) format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap
 }
 
-.App-header {
-  background-color: #ffffff3a; 
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  width: 100px;
-  height: 260px;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Bogle!important
 }
 
-.App-link {
-  color: #61dafb;
+li,
+ul {
+	list-style: none
 }
 
+.gr {
+	color: #5fb446
+}
+
+.gm {
+	color: #0071ce
+}
+
+.bg-yellow {
+	background-color: #ffc500!important
+}
+
+body {
+	line-height: 1.4;
+	font-size: 16px!important;
+	color: #333;
+	box-sizing: border-box
+}
+
+.prehome-header {
+	width: 100%;
+	background-color: #0071ce;
+	height: 80px;
+	position: relative
+}
+
+.prehome-header .logo {
+	width: 140px;
+	display: inline-block;
+	position: relative;
+	left: 0;
+	top: 1rem
+}
+
+.prehome-header .logo img {
+	width: 100%
+}
+
+.juntosnoscuidamos {
+	display: block;
+	text-decoration: none;
+	padding: 1.8rem 0;
+	float: right;
+	color: #fff;
+	font-weight: 700;
+	font-size: .9rem;
+	text-shadow: 0 0 2px rgba(0, 0, 0, .5)
+}
+
+.juntosnoscuidamos span {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_locales_2.png%5D&sink=format%5Bpng%5D);
+	width: 12px;
+	height: 12px;
+	display: inline-block;
+	margin-right: 3px;
+	background-size: contain
+}
+
+.prehome-footer {
+	display: block;
+	margin: 2rem 3rem;
+	text-align: center;
+	font-size: .8rem
+}
+
+.prehome-empresas span {
+	display: inline-block;
+	margin: 0 5px
+}
+
+.prehome-empresas .texto {
+	display: inline-block;
+	height: 34px;
+	line-height: 34px;
+	top: -.8rem;
+	position: relative
+}
+
+.prehome-empresas a {
+	display: inline-block
+}
+
+.prehome-razon {
+	border-top: 1px solid #333;
+	padding-top: 10px
+}
+
+.prehome-sscc {
+	text-align: center;
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem
+}
+
+.soy-pyme,
+.to-go,
+.sac,
+.catalogo {
+	background-color: #d50057;
+	color: #fff;
+	padding: 10px 150px 10px 20px;
+	border-radius: 5px;
+	position: relative;
+	width: 100%;
+	float: left;
+	margin: 1% 0;
+	box-sizing: border-box;
+	font-size: .9rem
+}
+
+.sac {
+	text-align: center;
+	background-color: #0071ce;
+	width: 98%;
+	margin: 0 1%;
+	padding: 10px 20px
+}
+
+.catalogo {
+	text-align: center;
+	background-color: #1c355e;
+	width: 98%;
+	margin: 0 1%;
+	padding: 0;
+	border-radius: 0
+}
+
+.soy-pyme img {
+	width: 7rem;
+	right: 1rem;
+	top: 6px;
+	position: absolute
+}
+
+.mine-mine img {
+	width : 500;
+	height : 600;
+	position: absolute
+}
+.to-go {
+	background-color: #6bc1e1;
+	padding: 10px 60px 10px 20px
+}
+
+.to-go img {
+	width: 2.8rem;
+	right: .5rem;
+	top: 2px;
+	position: absolute
+}
+
+.prehome-sscc a {
+	color: #428bca!important;
+	text-decoration: none!important
+}
+
+.prehome-sscc .texto {
+	display: inline-block;
+	position: relative;
+	top: -.5rem
+}
+
+.prehome-sscc .icon-wp {
+	display: inline-block;
+	margin-left: 10px;
+	position: relative;
+	top: 5px
+}
+
+.prehome-sscc ul {
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+
+.prehome-sscc ul li {
+	display: block;
+	padding: 0 20px;
+	margin-bottom: 1rem
+}
+
+.prehome-border {
+	border: none
+}
+
+.prehome-sscc ul li.medio-pago {
+	position: relative;
+	top: 1rem
+}
+
+.prehome-sscc ul li.medio-pago img {
+	display: block;
+	width: auto;
+	height: 46px
+}
+
+.prehome-container.horarios {
+	color: #fff;
+	padding: .5rem 0;
+	text-align: center
+}
+
+.prehome-container.horarios.cyber {
+	color: #fff;
+	padding: .5rem 0;
+	text-align: center;
+	position: relative;
+	box-sizing: border-box
+}
+
+.text-cyber {
+	text-align: left;
+	width: 90%;
+	margin-left: 5%;
+	line-height: 1.5rem;
+	font-size: .9rem
+}
+
+.prehome-container.horarios.cyber img {
+	width: 3rem;
+	position: absolute;
+	margin-left: .5rem
+}
+
+.horarios a {
+	text-decoration: none;
+	color: #ffc220;
+	font-weight: 700
+}
+
+.prehome-content {
+	width: 90%;
+	margin: 0 auto
+}
+
+.prehome-container {
+	width: 100%;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	position: relative
+}
+
+.prehome-hero {
+	background-color: #f5f5f5;
+	padding-top: 2.5rem;
+	padding-bottom: 0
+}
+
+.prehome-card {
+	box-sizing: border-box;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	width: 15%;
+	margin: 1.5rem 1% 2rem;
+	float: left;
+	text-align: left;
+	position: relative;
+	box-shadow: 0 0 7px rgba(0, 0, 0, .2);
+	font-weight: 700
+}
+
+.prehome-card .btn {
+	display: inline-block;
+	background-color: #fff;
+	text-decoration: none;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	line-height: 2rem;
+	font-weight: 700;
+	color: #0071ce;
+	margin-top: 2rem;
+	border-radius: 1rem
+}
+
+.icon-gm,
+.icon-gr {
+	display: inline-block;
+	width: 4rem;
+	height: 4rem;
+	position: absolute;
+	left: .8rem;
+	top: 0;
+	background-size: cover
+}
+
+.icon-gr {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icon-gr-2.png%5D&sink=format%5Bpng%5D%5D&sink=format%5Bpng%5D)
+}
+
+.icon-gm {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icon-gm-2.png%5D&sink=format%5Bpng%5D%5D&sink=format%5Bpng%5D)
+}
+
+.title-gm,
+.title-gr {
+	background-color: #5fb446;
+	color: #fff;
+	font-weight: 400;
+	padding: 20px 20px 20px 80px;
+	border-radius: 5px;
+	margin: 0 auto;
+	top: -2rem;
+	max-width: 130px;
+	font-size: 1.2rem;
+	position: relative;
+	text-align: left;
+	z-index: 2
+}
+
+.title-gm {
+	background-color: #0071ce
+}
+
+.exp.title-gm,
+.exp.title-gr {
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #d4d4d4
+}
+
+.exp-btn {
+	color: #333;
+	background-color: #ffc220;
+	display: inline-block;
+	line-height: 2rem;
+	text-shadow: none;
+	border-radius: 1rem;
+	margin-top: .8rem;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center
+}
+
+.link {
+	text-decoration: none
+}
+
+ul li.caluga {
+	box-sizing: border-box;
+	float: left;
+	width: 48%;
+	height: 15rem;
+	border-radius: 5px;
+	background-position: center;
+	margin: 3% 2% 3% 0;
+	position: relative;
+	font-size: .9rem;
+	text-align: left;
+	z-index: 0;
+	transition: box-shadow .3s, background-size .3s
+}
+
+ul li.caluga.disabled {
+	filter: grayscale()
+}
+
+ul li.caluga.disabled a {
+	cursor: not-allowed
+}
+
+ul li.caluga.disabled:hover {
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
+	background-size: 100%
+}
+
+ul li.compra-programada.disabled:hover {
+	background-size: 182%
+}
+
+ul li.compra-rapida.disabled:hover {
+	background-size: 146%
+}
+
+ul li.caluga a {
+	text-decoration: none;
+	color: #fff
+}
+
+ul li.caluga:hover {
+	box-shadow: 0 0 7px 0 rgba(0, 0, 0, .5);
+	background-size: 105%
+}
+
+ul li.compra-programada:hover {
+	background-size: 160%
+}
+
+ul li.compra-rapida:hover {
+	background-size: 105%
+}
+
+ul li.caluga:last-child {
+	margin: 3% 0 3% 2%
+}
+
+ul.gm li.caluga {
+	width: 100%;
+	margin: 3% 0;
+	overflow: hidden
+}
+
+ul.gm li.caluga:hover .category {
+	right: 0;
+	opacity: 1
+}
+
+ul.gm li .text-caluga {
+	width: 90%
+}
+
+.compra-programada,
+.mundo-lider,
+.compra-liderapp {
+	color: #fff;
+	position: relative;
+	padding: 40px;
+	top: -4.1rem;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	background-position: right top
+}
+
+.compra-programada .txt,
+.mundo-lider .txt,
+.compra-liderapp .txt {
+	position: relative;
+	z-index: 2
+}
+
+.compra-liderapp .txt {
+	color: #333
+}
+
+.compra-programada {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/bg_supermercado.jpg%5D&sink=format%5Bjpg%5D);
+	background-size: cover
+}
+
+.compra-liderapp {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/prehome/bg-liderapp-prehome.jpg%5D&sink=format%5Bjpg%5D);
+	background-size: cover;
+	background-position: center top
+}
+
+.mundo-lider {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/bg_mundo_lider.jpg%5D&sink=format%5Bjpg%5D);
+	background-size: cover
+}
+
+.prehome-hero.exp .overlay {
+	background-color: rgba(0, 0, 0, .3)
+}
+
+.sub-category {
+	background-color: #f6f6f6;
+	position: relative;
+	width: 75%;
+	margin: .5rem auto;
+	padding: 1rem 0 .5rem;
+	margin-top: -4rem;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	text-align: center
+}
+
+.sub-category a {
+	color: #333;
+	text-decoration: none
+}
+
+.sub-category .icon {
+	width: 30px;
+	height: 30px;
+	display: block;
+	margin: 0 auto;
+	background-size: contain
+}
+
+.monto {
+	display: inline-block;
+	background-color: #bc2b20;
+	color: #fff;
+	padding: .25rem .7rem;
+	margin-left: 3px;
+	border-radius: 5px
+}
+
+.sub-category .icon.jugueteria {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_jugueteria.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.tecno {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_tecno.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.telefonia {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_telefonia.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.computacion {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_computacion.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.linea-blanca {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_lineablanca.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.climatizacion {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_climatizacion.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.dormitorio {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_dormitorio.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.muebles {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_muebles.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.decohogar {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_decohogar.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.belleza {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_belleza.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.deportes {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_deportes.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.aire-libre {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_airelibre.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.mbb {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_mundobebe.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.ferreteria {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_ferreteria.png%5D&sink=format%5Bpng%5D)
+}
+
+.sub-category .icon.carnes {
+	background-image: url(https://images.lider.cl/wmtcl?source=url%5Bfile:/contin/prehome_v3/icono_carnesypescados.png%5D&sink=format%5Bpng%5D)
+}

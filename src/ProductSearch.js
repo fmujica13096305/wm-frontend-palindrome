@@ -14,7 +14,7 @@ class ProductDisplay extends Component {
         let normalPriceDic = <>
             <div> Precio : {this.props.product.price}</div>
         </>;
-        let div = <div>
+        let div = <div class="prehome-card">
             {this.getProductTitle()}
             {this.getProductImage()}
 
@@ -27,30 +27,11 @@ class ProductDisplay extends Component {
     }
 
     getProductImage() {
-        return <img src={`http://${this.props.product.image}`} alt="product"/>;
+        return <img class="mine-mine" src={`http://${this.props.product.image}`} alt="product"/>;
     }
 
     getProductTitle() {
         return <div><h2>{this.props.product.brand}-{this.props.product.description}</h2></div>;
-    }
-}
-
-class HeaderDisplay extends Component {
-    render() {
-        return <div>
-            
-                    <h1>gfdgfdhfdgdh : Walmart Product Search</h1>
-                    <input
-                        name="text"
-                        type="text"
-                        placeholder="Buscar"
-                        onChange={this.props.onChange}
-                        value={this.props.value}/>
-                    <button
-                        onClick={this.props.onClick}>Buscar
-                    </button>
-                </div>
-   
     }
 }
 
@@ -60,20 +41,31 @@ class MainWindow extends Component {
     render() {
         return <div>
             <div class={classes.headerInfo}>
-                <div class={classes.headerWrapper}>
-                    <div></div>
-                    <input 
-                        name="text"
-                        type="text"
-                        placeholder="Search"
-                        text = "sdd"
-                        onChange={this.props.onChange}
-                        value={this.props.value}/>
-                    <button
-                        onClick={this.props.onClick}>Find Product
-                    </button>
-                </div>
-            </div>
+
+            <table>
+           
+               
+                    <tr>
+                        <td>
+                        <input 
+                            name="text"
+                            type="text"
+                            placeholder="Search"
+                            text = "sdd"
+                            onChange={this.props.onChange}
+                            value={this.props.value}/>
+                            </td>
+                        <td>
+                           <button class={classes.button} onClick={this.props.onClick}>Find Product</button>
+                        </td>
+                    </tr>
+              
+          
+</table>
+</div>
+
+
+ 
             {this.props.meals.data ?
                 (
                     <div>
@@ -82,7 +74,7 @@ class MainWindow extends Component {
                 )
                 :
                 (
-                    <p></p>
+                    <table> <p>Please enter a valid product ID , Brand or description</p></table>
                 )}
         </div>;
     }
@@ -96,7 +88,7 @@ class ProductSearch extends Component {
     };
 
     handleSearch = () => {
-        console.log("Buscando :"+this.state.searchValue);
+        console.log("Searching :"+this.state.searchValue);
         this.makeApiCall(this.state.searchValue);
     }
 
