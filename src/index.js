@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './ProductSearch.css';
+
+import ProductSearch from "./ProductSearch";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+     <App />
+    <ProductSearch />
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+reportWebVitals();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
