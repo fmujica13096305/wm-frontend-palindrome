@@ -35,12 +35,11 @@ class ProductDisplay extends Component {
     }
 }
 
-class MainWindow extends Component {
+class HeaderDisplay extends Component {
     render() {
         return <div>
-            <div class={classes.headerInfo}>
-                <div class={classes.headerWrapper}>
-                    <h1>Challenge : Walmart Product Search</h1>
+            
+                    <h1>gfdgfdhfdgdh : Walmart Product Search</h1>
                     <input
                         name="text"
                         type="text"
@@ -49,6 +48,29 @@ class MainWindow extends Component {
                         value={this.props.value}/>
                     <button
                         onClick={this.props.onClick}>Buscar
+                    </button>
+                </div>
+   
+    }
+}
+
+
+
+class MainWindow extends Component {
+    render() {
+        return <div>
+            <div class={classes.headerInfo}>
+                <div class={classes.headerWrapper}>
+                    <div></div>
+                    <input 
+                        name="text"
+                        type="text"
+                        placeholder="Search"
+                        text = "sdd"
+                        onChange={this.props.onChange}
+                        value={this.props.value}/>
+                    <button
+                        onClick={this.props.onClick}>Find Product
                     </button>
                 </div>
             </div>
@@ -60,7 +82,7 @@ class MainWindow extends Component {
                 )
                 :
                 (
-                    <p>Por favor indicar un termino de busqueda</p>
+                    <p></p>
                 )}
         </div>;
     }
@@ -79,11 +101,7 @@ class ProductSearch extends Component {
     }
 
     makeApiCall = searchInput => {
-        //const url = `http://localhost:8080/api/v1/products/search`;
-        //const url = `https://wps-backend.herokuapp.com/api/v1/products/search`;
         const url = `https://salty-plains-09920.herokuapp.com/api/v1/products/search`;
-       // const url = 'https://backend-wallmart.herokuapp.com/actuator/health';
-
         var searchUrl = `${url}?query=${searchInput}`;
         fetch(searchUrl).then(response => {
             return response.json();
