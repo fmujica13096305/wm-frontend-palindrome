@@ -5,7 +5,7 @@ class ProductDisplay extends Component {
     render() {
         let offertDiv = <>
             <ul>
-                <div><h3> Precio Oferta  : &#36; {this.props.product.onSalePrice}</h3></div>
+                <div><h3> Precio Oferta  : &#36; {this.props.product.onSalePrice}</h3><img class="to-go" src="https://lh3.googleusercontent.com/proxy/PF-3ol3bkGfufjybg2zHymCLb0tF58ydDosymbrfsFE25oOkShyjbitSQFqQtiWE_7VMa_xXLXNkaxyRV-dbO4WmZrX2RFggsYuiC9fWS0SwU6o6fjZ5nHGTyitTTQbG" alt="product"/></div>
             </ul>
             <ul>
                 <div><strike><h3> Precio Original: &#36; {this.props.product.price}</h3></strike></div>
@@ -41,11 +41,8 @@ class MainWindow extends Component {
     render() {
         return <div>
             <div class={classes.headerInfo}>
-
             <table>
-           
-               
-                    <tr>
+                       <tr>
                         <td>
                         <input 
                             name="text"
@@ -58,10 +55,8 @@ class MainWindow extends Component {
                         <td>
                            <button class={classes.button} onClick={this.props.onClick}>Find Product</button>
                         </td>
-                    </tr>
-              
-          
-</table>
+                    </tr>           
+          </table>
 </div>
 
 
@@ -95,6 +90,7 @@ class ProductSearch extends Component {
     makeApiCall = searchInput => {
         const url = `https://salty-plains-09920.herokuapp.com/api/v1/products/search`;
         var searchUrl = `${url}?query=${searchInput}`;
+        
         fetch(searchUrl).then(response => {
             return response.json();
         }).then(jsonData => {
@@ -102,6 +98,7 @@ class ProductSearch extends Component {
             this.setState({ meals: jsonData });
         });
     };
+
 
     render() {
         return (

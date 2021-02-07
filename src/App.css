@@ -130,8 +130,8 @@ body {
 .to-go,
 .sac,
 .catalogo {
-	background-color: #d50057;
-	color: #fff;
+	
+
 	padding: 10px 150px 10px 20px;
 	border-radius: 5px;
 	position: relative;
@@ -166,18 +166,16 @@ body {
 	position: absolute
 }
 
+
 .mine-mine img {
-	width : 500;
-	height : 600;
+	width : 50;
+	height : 50;
 	position: absolute
 }
-.to-go {
-	background-color: #6bc1e1;
-	padding: 10px 60px 10px 20px
-}
+
 
 .to-go img {
-	width: 2.8rem;
+	width: 1rem;
 	right: .5rem;
 	top: 2px;
 	position: absolute
