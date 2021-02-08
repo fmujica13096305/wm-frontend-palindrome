@@ -89,7 +89,6 @@ class ProductSearch extends Component {
 
     makeApiCall = searchInput => {
         const url = 'https://rocky-bastion-09181.herokuapp.com/api/v1/products/search';
-        //const url = `https://salty-plains-09920.herokuapp.com/api/v1/products/search`;
         var searchUrl = `${url}?query=${searchInput}`;
         
         fetch(searchUrl).then(response => {
