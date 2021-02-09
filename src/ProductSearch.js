@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import classes from './ProductSearch.css';
+import onSaleLogo from'./50_Onsale.png';
 
 class ProductDisplay extends Component {
     render() {
         let offertDiv = <>
             <ul>
-                <div><h3 id="onSaleID"> Precio Oferta  : &#36; {this.props.product.onSalePrice}</h3><img class="to-go" src="http://www.pngall.com/wp-content/uploads/2016/04/50-Off-PNG-Background.png" alt="product"/></div>
+                <div><h3 id="onSaleID"> Precio Oferta  : &#36; {this.props.product.onSalePrice}</h3><img class="to-go" src={onSaleLogo} alt="On sale product"/></div>
             </ul>
             <ul>
                 <div><strike><h3> Precio Original: &#36; {this.props.product.price}</h3></strike></div>
