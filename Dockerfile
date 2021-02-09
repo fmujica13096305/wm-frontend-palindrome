@@ -1,19 +1,23 @@
-FROM node:14.1-alpine AS builder
+FROM node:10-alpine as builder
 
-WORKDIR /opt/web
+# install and cache app dependencies
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm install && mkdir /react-frontend && mv ./node_modules ./react-frontend
 
-ENV PATH="./node_modules/.bin:$PATH"
+WORKDIR /react-frontend
 
-COPY . ./
+COPY . .
+
 RUN npm run build
 
-FROM nginx:1.17-alpine
-RUN apk --no-cache add curl
-RUN curl -L https://github.com/a8m/envsubst/releases/download/v1.1.0/envsubst-`uname -s`-`uname -m` -o envsubst && \
-    chmod +x envsubst && \
-    mv envsubst /usr/local/bin
-COPY ./nginx.config /etc/nginx/nginx.template
-CMD ["/bin/sh", "-c", "envsubst < /etc/nginx/nginx.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
-COPY --from=builder /opt/web/build /usr/share/nginx/html
+
+
+# ------------------------------------------------------
+# Production Build
+# ------------------------------------------------------
+FROM nginx:1.16.0-alpine
+COPY --from=builder /react-frontend/build /usr/share/nginx/html
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/conf.d
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
