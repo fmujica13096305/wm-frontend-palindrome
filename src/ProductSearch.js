@@ -5,7 +5,7 @@ class ProductDisplay extends Component {
     render() {
         let offertDiv = <>
             <ul>
-                <div><h3 id="onSaleID"> Precio Oferta  : &#36; {this.props.product.onSalePrice}</h3><img class="to-go" src="https://lh3.googleusercontent.com/proxy/PF-3ol3bkGfufjybg2zHymCLb0tF58ydDosymbrfsFE25oOkShyjbitSQFqQtiWE_7VMa_xXLXNkaxyRV-dbO4WmZrX2RFggsYuiC9fWS0SwU6o6fjZ5nHGTyitTTQbG" alt="product"/></div>
+                <div><h3 id="onSaleID"> Precio Oferta  : &#36; {this.props.product.onSalePrice}</h3><img class="to-go" src="http://www.pngall.com/wp-content/uploads/2016/04/50-Off-PNG-Background.png" alt="product"/></div>
             </ul>
             <ul>
                 <div><strike><h3> Precio Original: &#36; {this.props.product.price}</h3></strike></div>
